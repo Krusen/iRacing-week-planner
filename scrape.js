@@ -9,6 +9,9 @@ const writeFile = promisify(fs.writeFile);
 const username = process.env.IWP_USERNAME;
 const password = process.env.IWP_PASSWORD;
 
+if (!username) throw "Please set environment variable IWP_USERNAME to your iRacing username";
+if (!password) throw "Please set environment variable IWP_PASSWORD to your iRacing password";
+
 const extractJSONString = (sourceLines, variableName, fileName) => {
   const regexp = new RegExp(`^var ${variableName} = extractJSON\\('`);
   const listingLine = sourceLines.filter(line => line.search(regexp) !== -1)[0];
