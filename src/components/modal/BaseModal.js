@@ -25,7 +25,7 @@ export default class BaseModal extends React.Component {
       <Modal
         onRequestClose={onRequestClose} closeTimeoutMS={closeTimeoutMS} isOpen={isOpen}
         className={classNames('Modal__Bootstrap', 'modal-dialog', 'modal-lg', className)}
-        ariaHideApp={false}
+        ariaHideApp={false} contentLabel=''
       >
         {children}
       </Modal>
